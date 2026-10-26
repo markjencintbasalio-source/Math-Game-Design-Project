@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Discrete Math Quiz Arena</title>
+<link rel="stylesheet" href="style.css"></head><body>
+<canvas id="bg"></canvas>
+<main>
+<section class="screen on" id="s0"><h1>QUIZ ARENA</h1><p class="sub">Discrete Mathematics · MS 101 · Modules 6, 7 &amp; 9</p><button class="btn pulse" onclick="show('s1')">▶ START</button></section>
+
+<section class="screen" id="s1"><h1 style="font-size:2.6rem">Choose a Module</h1><p class="sub">Questions come only from the module you pick</p><div class="cards" id="cards"></div></section>
+
+<section class="screen" id="sd"><h1 style="font-size:2.6rem">Choose Difficulty</h1><p class="sub" id="sdm">—</p>
+<div class="cards">
+<div class="card" onclick="start(cur,0)"><b style="color:#2ee59d">🟢 EASY</b><h3>Warm-up</h3><span>30 seconds per question · ×1 points</span></div>
+<div class="card" onclick="start(cur,1)"><b style="color:#ffd166">🟡 MEDIUM</b><h3>Challenge</h3><span>20 seconds per question · ×1.5 points</span></div>
+<div class="card" onclick="start(cur,2)"><b style="color:#ff5c7a">🔴 HARD</b><h3>Expert</h3><span>12 seconds per question · ×2 points</span></div></div>
+<div class="row"><button class="btn ghost" onclick="show('s1')">← Back to modules</button></div></section>
+
+<section class="screen" id="s2">
+<div class="hud"><div id="mname">—</div><div>Question <b id="qn">1</b>/<span id="qt">8</span></div><div>🔥 <b id="stk">0</b></div><div>Score <b id="sc">0</b></div><div>⏱ <b id="tm">20</b>s</div></div>
+<div class="bar"><div id="fill"></div></div>
+<div class="q" id="q"></div><div class="opts" id="opts"></div>
+<div id="fb"><div class="t" id="ft"></div><div id="fa"></div>
+<button class="link" id="exb" onclick="toggleEx()">💡 Show explanation</button>
+<div id="ex"></div><div class="row" style="justify-content:flex-start"><button class="btn" id="nx" onclick="next()">Next ➜</button></div></div>
+</section>
+
+<section class="screen" id="s3"><p class="sub" style="margin:0">Module complete!</p><h1 style="font-size:2.4rem" id="rm"></h1>
+<div class="big" id="rs">0</div><p class="sub" id="rd"></p><p class="sub" id="rk" style="color:var(--cy);font-size:1.6rem"></p>
+<div class="row"><button class="btn" onclick="start(cur,lv)">↻ Play again</button><button class="btn ghost" onclick="show('sd')">Change difficulty</button><button class="btn ghost" onclick="show('s1')">Choose another module</button></div></section>
+</main>
+<script src="script.js"></script></body></html>
